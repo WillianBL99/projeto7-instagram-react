@@ -1,8 +1,8 @@
 
 export default function Navbar() {
     return (
-        <div class="navbar">
-            <div class="container">
+        <div className="navbar">
+            <div className="container">
                 <Logo />
                 <LogoMobile />
                 <InstagramName />
@@ -17,7 +17,7 @@ export default function Navbar() {
 
 function InstagramName() {
     return (
-        <div class="instagram-mobile">
+        <div className="instagram-mobile">
             <img src="./img/logo.png" alt="" />
         </div>
     )
@@ -25,7 +25,7 @@ function InstagramName() {
 
 function Iput() {
     return (
-        <div class="pesquisa">
+        <div className="pesquisa">
             <input type="text" placeholder="Pesquisar" />
         </div>
     )
@@ -33,26 +33,27 @@ function Iput() {
 
 function IconeMobile() {
     return (
-        <div class="icones-mobile">
+        <div className="icones-mobile">
             <ion-icon name="paper-plane-outline"></ion-icon>
         </div>
     )
 }
 
 function Icones() {
+    const icons = ["paper-plane-outline", "compass-outline", "heart-outline", "person-outline"];
     return (
-        <div class="icones">
-            <ion-icon name="paper-plane-outline"></ion-icon>
-            <ion-icon name="compass-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
+        <div className="icones">
+            {
+                icons.map((icon,id) =>
+                    <ion-icon key={id} name={icon}></ion-icon>)
+            }
         </div>
     )
 }
 
 function LogoMobile() {
     return (
-        <div class="logo-mobile">
+        <div className="logo-mobile">
             <ion-icon name="logo-instagram"></ion-icon>
         </div>
     )
@@ -60,9 +61,9 @@ function LogoMobile() {
 
 function Logo() {
     return (
-        <div class="logo">
+        <div className="logo">
             <ion-icon name="logo-instagram"></ion-icon>
-            <div class="separador"></div>
+            <div className="separador"></div>
             <img src="./img/logo.png" alt="" />
         </div>
     )

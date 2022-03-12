@@ -10,11 +10,11 @@ export default function SuggestionsFollwers() {
 
 
     return (
-        <div class="sugestoes">
+        <div className="sugestoes">
             <Title />
             {
-                followers.map(({ icon, nameUser, reason }) =>
-                    <Follower icon={icon} nameUser={nameUser} reason={reason} />
+                followers.map(({ icon, nameUser, reason },id) =>
+                    <Follower key={id} icon={icon} nameUser={nameUser} reason={reason} />
                 )
             }
         </div>
@@ -24,7 +24,7 @@ export default function SuggestionsFollwers() {
 
 function Title() {
     return (
-        <div class="titulo">
+        <div className="titulo">
             Sugestões para você
             <div>Ver tudo</div>
         </div>
@@ -34,15 +34,15 @@ function Title() {
 function Follower(props) {
     const { icon, nameUser, reason } = props;
     return (
-        <div class="sugestao">
-            <div class="usuario">
+        <div className="sugestao">
+            <div className="usuario">
                 <img src={icon} alt="" />
-                <div class="texto">
-                    <div class="nome">{nameUser}</div>
-                    <div class="razao">{reason}</div>
+                <div className="texto">
+                    <div className="nome">{nameUser}</div>
+                    <div className="razao">{reason}</div>
                 </div>
             </div>
-            <div class="seguir">Seguir</div>
+            <div className="seguir">Seguir</div>
         </div>
     )
 }

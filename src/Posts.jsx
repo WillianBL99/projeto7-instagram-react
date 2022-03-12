@@ -1,17 +1,38 @@
 export default function Posts() {
+  const posts = [
+    {
+      icon: "./img/meowed.svg",
+      name: "meowed",
+      img: "./img/gato-telefone.svg",
+      infoLike: { icon: "./img/respondeai.svg", user: "respondeai", qtd: "101.523" }
+    },
+    {
+      icon: "./img/barked.svg",
+      name: "barked",
+      img: "./img/dog.svg",
+      infoLike: { icon: "./img/adorable_animals.svg", user: "adorable_animals", qtd: "99.159" }
+    },
+    {
+      icon: "./img/catanacomics.svg",
+      name: "Catana",
+      img: "./img/gatoMeme.png",
+      infoLike: { icon: "./img/respondeai.svg", user: "respondeai", qtd: "558.159" }
+    }
+  ]
   return (
     <div className="posts">
-      <Post
-        iconUser="./img/meowed.svg" nameUser="meowed"
-        imgPost="./img/gato-telefone.svg" iconUserLike="./img/respondeai.svg"
-        userLike="respondeai" qtdLike="101.523"
-      />
-
-      <Post
-        iconUser="./img/barked.svg" nameUser="barked"
-        imgPost="./img/dog.svg" iconUserLike="./img/adorable_animals.svg"
-        userLike="adorable_animals" qtdLike="99.159"
-      />
+      {posts.map(({ icon, name, img, infoLike }, id) => {
+        const {icon:iconUserLike, user:nameUserLike, qtd:qtdlikes} = infoLike
+        return <Post
+          key={id}
+          iconUser={icon} 
+          nameUser={name}
+          imgPost={img} 
+          iconUserLike={iconUserLike}
+          userLike={nameUserLike} 
+          qtdLike={qtdlikes}
+        />
+      })}
     </div>
   )
 }
@@ -25,7 +46,7 @@ function Post(props) {
     userLike,
     qtdLike
   } = props
-  
+
   return (
     <div className="post">
       <PostTop img={iconUser} name={nameUser} />

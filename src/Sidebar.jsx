@@ -3,7 +3,7 @@ import SuggestionsFollwers from "./SuggestionsFollwers"
 export default function Sidebar() {
     const user = {icon:"./img/catanacomics.svg" ,userName:"catanacomics" ,name:"Catana" }
     return (
-        <div class="sidebar">
+        <div className="sidebar">
             <User icon={user.icon} userName={user.userName} name={user.name} />
 
             <SuggestionsFollwers />
@@ -18,9 +18,9 @@ export default function Sidebar() {
 function User(props) {
     const { icon, userName, name } = props
     return (
-        <div class="usuario">
+        <div className="usuario">
             <img src={icon} alt="" />
-            <div class="texto">
+            <div className="texto">
                 <strong>{userName}</strong>
                 {name}
             </div>
@@ -30,7 +30,7 @@ function User(props) {
 
 function FooterLinks() {
     return (
-        <div class="links">
+        <div className="links">
             Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
         </div>
     )
@@ -38,7 +38,7 @@ function FooterLinks() {
 
 function FooterCopyright() {
     return (
-        <div class="copyright">
+        <div className="copyright">
             © 2021 INSTAGRAM DO FACEBOOK
         </div>
     )
