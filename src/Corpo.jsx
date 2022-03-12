@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar"
 
 export default function Corpo() {
   return (
-    <div class="corpo">
+    <div className="corpo">
       <Conteudo />
       <Sidebar />
     </div>
@@ -13,7 +13,7 @@ export default function Corpo() {
 
 function Conteudo() {
   return (
-    <div class="esquerda">
+    <div className="esquerda">
       <Stories />
       <Posts />
     </div>

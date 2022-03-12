@@ -1,30 +1,39 @@
-export default function Posts(){
-    return (
-      <div class="posts">
-        <Post
-          iconUser="./img/meowed.svg" nameUser="meowed"
-          imgPost="./img/gato-telefone.svg" iconUserLike="./img/respondeai.svg"
-          userLike="respondeai" qtdLike="101.523"
-        />
-  
-        <Post
-          iconUser="./img/barked.svg" nameUser="barked"
-          imgPost="./img/dog.svg" iconUserLike="./img/adorable_animals.svg"
-          userLike="adorable_animals" qtdLike="99.159"
-        />
-      </div>
-    )
+export default function Posts() {
+  return (
+    <div className="posts">
+      <Post
+        iconUser="./img/meowed.svg" nameUser="meowed"
+        imgPost="./img/gato-telefone.svg" iconUserLike="./img/respondeai.svg"
+        userLike="respondeai" qtdLike="101.523"
+      />
+
+      <Post
+        iconUser="./img/barked.svg" nameUser="barked"
+        imgPost="./img/dog.svg" iconUserLike="./img/adorable_animals.svg"
+        userLike="adorable_animals" qtdLike="99.159"
+      />
+    </div>
+  )
 }
 
 function Post(props) {
+  const {
+    iconUser,
+    nameUser,
+    imgPost,
+    iconUserLike,
+    userLike,
+    qtdLike
+  } = props
+  
   return (
-    <div class="post">
-      <PostTop img={props.iconUser} name={props.nameUser} />
-      <PostCenter img={props.imgPost} />
+    <div className="post">
+      <PostTop img={iconUser} name={nameUser} />
+      <PostCenter img={imgPost} />
       <PostBottom
-        icon={props.iconUserLike}
-        user={props.userLike}
-        qtd={props.qtdLike}
+        icon={iconUserLike}
+        user={userLike}
+        qtd={qtdLike}
       />
     </div>
 
@@ -32,35 +41,37 @@ function Post(props) {
 }
 
 function PostTop(props) {
+  const { img, name } = props
   return (
-    <div class="topo">
-      <div class="usuario">
-        <img src={props.img} alt="" />
-        {props.name}
+    <div className="topo">
+      <div className="usuario">
+        <img src={img} alt="" />
+        {name}
       </div>
-      <div class="acoes">
+      <div className="acoes">
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
     </div>
   )
 }
 
-function PostCenter(props) {
+function PostCenter({ img }) {
   return (
-    <div class="conteudo">
-      <img src={props.img} alt="" />
+    <div className="conteudo">
+      <img src={img} alt="" />
     </div>
   )
 }
 
 function PostBottom(props) {
+  const { icon, user, qtd } = props
   return (
-    <div class="fundo">
+    <div className="fundo">
       <PostActions />
       <PostLikeComment
-        icon={props.icon}
-        user={props.user}
-        qtd={props.qtd}
+        icon={icon}
+        user={user}
+        qtd={qtd}
       />
     </div>
   )
@@ -68,7 +79,7 @@ function PostBottom(props) {
 
 function PostActions() {
   return (
-    <div class="acoes">
+    <div className="acoes">
       <div>
         <ion-icon name="heart-outline"></ion-icon>
         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -82,11 +93,12 @@ function PostActions() {
 }
 
 function PostLikeComment(props) {
+  const { icon, user, qtd } = props
   return (
-    <div class="curtidas">
-      <img src={props.icon} alt="" />
-      <div class="texto">
-        Curtido por <strong>{props.user}</strong> e <strong>outras {props.qtd} pessoas</strong>
+    <div className="curtidas">
+      <img src={icon} alt="" />
+      <div className="texto">
+        Curtido por <strong>{user}</strong> e <strong>outras {qtd} pessoas</strong>
       </div>
     </div>
   )

@@ -18,13 +18,14 @@ export default function Stories(){
 }
 
 function Story(props) {
+  const {img, name} = props
   return (
     <div class="story">
       <div class="imagem">
-        <img src={props.img} alt="" />
+        <img src={img} alt="" />
       </div>
       <div class="usuario">
-        {props.name}
+        {name}
       </div>
     </div>
   )
